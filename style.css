@@ -20,12 +20,11 @@ img {
  
 /* Utils */
 
-.container {
+.wrapper {
   width: 100%;
   height: 100vh;
 }
   
-
 
 ul {
     list-style-type: none;
@@ -63,35 +62,10 @@ a {
 
 .flex-section {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    align-content: flex-end;
 }
 
-
-
-
-.col-10 {
-    width: 10%;
-}
-
-.col-20 {
-    width: 20%;
-}
-
-.col-30 {
-    width: 30%;
-}
-    
- .col-50 {
-    width: 50%;
-}
-
-.col-70 {
-    width: 70%;
-}
-
-.col-80 {
-    width: 80%;
-}
 
 
 .mt-10 {
@@ -178,48 +152,70 @@ main {
     top: 0;
     left: 0;
     z-index: 1;
+    overflow: hidden;
     width: 230px;
-    min-height: 400px;
     height: calc(100vh - 90px);
     background-color: rgb(0,0,0);
 }
     
-   
-
+    
 .menu-list {
     font-size: 13px;
     line-height: 35px;
     padding: 0 20px;
 }
 
+.img-profile {
+    display: flex;
+    align-items: center;
+    padding-top: 13px;
+}
 
 .fa-plus {
     color:  rgb(0,0,0);
-    background-color: rgb(112,112,112);
+    background-color: rgb(163,163,163);
     padding: 10px 10px;
     margin-right: 8px;
     margin-bottom: 8px;
 }
 
-main .nav-playlist .menu-list {
-    height: 80%;
+.main-nav .nav-top {
+    height: calc(100% - 100px);
+    overflow: hidden;
+}
+
+.main-nav .nav-bottom {
+    height: 100px;
+}
+
+.main-nav .nav-playlist {
+    height: 50%;
     overflow-y: auto;
-    vertical-align: middle;
 }
 
 
 #logo {
     width: 150px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     margin-left: 14px;
     margin-top: 18px;
 }
 
 
-.main-nav .nav-playlist {
-    overflow: hidden;
+.logo-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 50px;
+    height: calc(100vh - 90px);
+    background-color: rgb(0,0,0);
+    display: none;
 }
-    
+ 
+.logo-mob {
+    filter: invert(1);
+}
 
 h2 {
     color: white;
@@ -236,9 +232,11 @@ hr {
 }
    
 
-#download{
-    width: 16px;
+.download{
+    width: 18px;
     margin-right: 8px;
+    vertical-align: middle;
+    filter:invert(0.5);
 }
 
 .logo-text{
@@ -248,14 +246,12 @@ hr {
 }
 
 
-#logo-profile {
+.logo-profile {
     width: 18px;
     background-color: gray;
     border-radius: 50%;
-    margin-right: 6px;
-    margin-top: 15px;
+    margin-right: 8px;    
 }
-
 
 
 /* Main-content */
@@ -271,17 +267,18 @@ main .main-content {
     width: 100%;
     margin-top: 100px;
     padding-left: 245px;
+    padding-bottom: 40px;
 }
  
 
-.content ul {
+.content ul li {
     position: relative;
 }
 
 .main-content li:hover a.active:after {
     position: absolute;
     bottom: 0;
-    left: 34%;
+    left: 50%;
     transform: translateX(-50%);
     content: "";
     display: block;
@@ -289,8 +286,23 @@ main .main-content {
     width: 30px;
     background: greenyellow;
 }
-    
 
+.nav-list ul li {
+    position: relative;
+}
+
+.nav-list li:hover a.active-plus:after {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    content: "";
+    display: block;
+    height: 35px;
+    width: 2px;
+    background: greenyellow;
+}
+    
+    
 .main-content .content ul li {
     padding: 0px 10px;
     font-size: 14px;
@@ -302,11 +314,11 @@ h1 {
 }
 
 .main-content h3 {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .main-content p {
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -316,11 +328,18 @@ h1 {
 
 .cover-menu {
     flex-shrink: 0;
-    width: calc(100% / 6 - 15px);
-    margin-right: 15px;
+    width: calc(100% / 6);
+    padding-right: 15px;
     cursor: pointer;
 }
 
+#youg, #einaudi {
+    border-radius: 50%;
+}
+
+.cover-container {
+    position: relative;
+}
 
 
 
@@ -333,9 +352,9 @@ footer {
     width: 100%;
     height: 90px;
     background-color: rgb(40,40,40);
+    overflow: hidden;
 }
-  
-    
+      
 
 .footer-nav {
     display: flex;
@@ -345,7 +364,7 @@ footer {
 
 #image {
     width: 45px;
-    margin: 0 10px;
+    margin-left: 10px;
 }
 
 
@@ -356,6 +375,7 @@ footer {
 
 footer i {
     color: white;
+    cursor: pointer;
 }
 
 .footer-center i {
@@ -382,56 +402,286 @@ footer i {
 
 
 
-#value, #progress {
+/* Footer Controls */
+
+.controls {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.controls-right {
+    cursor: pointer;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+
+.progress-bar-center, .progress-bar  {
+    position: relative;
     height: 3px;
-    margin-top: 15px;
-}
-
-#value, #value-small {
-    background-color: white;
-    display: inline-block;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-    margin-left: 10px;
-}
-
-#value {
-    width: 75px;
+    background-color: gray;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;   
 }
     
-#value-small {
+
+.progress-bar-center {
+    width: 370px;
+}
+
+.progress-bar {
+    width: 80px;       
+}
+
+
+.progress-bar-center .value, .progress-bar .value {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 5px 5px 0;    
+}
+    
+.progress-bar-center .value {
+    width: 70px;
+}
+
+.progress-bar .value {
     width: 25px;
 }
+    
 
-#progress, #progress-small {
-    background-color: gray;
-    display: inline-block;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    margin-right: 10px;
-}
-
-#progress {
-    width: 346px;
-}
-   
-#progress-small {
-    width: 80px;
-}
-
-#value-small, #progress-small {
-    height: 3px;
-}
-   
-.number {
+.controls span{
+    padding: 0 8px;
     color: white;
-    font-size: 9px;
+    font-size: 10px;
+}
+    
+.progress-bar .marker, .progress-bar-center .marker  {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: white;
+    display: none;
+}
+
+
+
+/* Hover */
+
+.cover-container .fa-circle-play {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.cover-menu:hover .fa-circle-play {
+    opacity: 1;
+}
+  
+.main-content header button:hover {
+    transform: scale(1.2);
+}
+    
+ul li a:hover {
+    color: white;
+}
+
+.menu-list li a .fa-plus:hover {
+    background-color: white;
+}
+
+.nav-bottom .download:hover {
+    filter: invert(0);
+}
+
+footer .name:hover {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+footer .fa-heart:hover, .fa-folder:hover {
+    color:white;
+}
+
+footer .footer-center .fa-circle-play:hover {
+    transform: scale(1.2);
+}
+
+
+footer .footer-right:hover .marker, footer .footer-center:hover .marker {
+    display: inline-block;
+}
+
+footer .footer-right:hover .value, footer .footer-center:hover .value{
+    background-color: greenyellow;
 }
 
 
 
 
+/* /* Media-query - Medium */
 
+@media screen and (max-width: 992px) {
+    .cover-menu {
+        width: calc(100% / 4);
+        padding-right: 10px;
+    }
+     
+}
+
+
+
+/* Media-query  - S */
+
+@media screen and (max-width: 768px) {
+
+
+    .cover-menu {
+        width: calc(100% / 2);
+        padding-right: 10px;
+    }
+
+    .main-content .content ul li a{
+        line-height: 50px;
+    }
+
+    .name {
+        font-size: 9px;
+        margin-left: 0;
+    }
+
+    .footer-left #image {
+        padding-right: 10px;
+        margin: 0;
+    }
+
+    .icons-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;   
+        padding: 0 16px; 
+    }
+
+    .icons-footer .fa-heart {
+        padding-bottom: 5px;
+    }
+
+    .fa-heart, .fa-folder {
+        font-size: 12px;
+    }
+
+
+    .footer-nav .footer-left .flex-col {
+        margin-right: 20px;
+    }
+
+
+    footer .footer-left, footer .footer-right {
+        width: 230px;
+    }
+
+    footer .footer-center {
+        width: 50%;
+    }
+    
+    footer .progress-bar-center {
+        width: 150px;
+    }
+
+    footer .progress-bar-center .value {
+        width: 30px;
+    }
+
+    footer .progress-bar .value {
+        width: 18px;
+    }
+
+    .footer-center .fa-solid {
+        font-size: 16px;
+    }
+
+    .footer-center i {
+        padding: 0px 9px;
+    }
+
+    footer .fa-circle-play {
+        font-size: 24px;
+    }
+
+}
+
+/* Media-query  - XS  */
+
+@media screen and (max-width: 600px) {
+
+
+   
+    .logo-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .main-nav.flex-column {
+        display: none;
+    }
+    
+   
+    main .main-content {
+        padding-left: 58px;
+    }
+
+    .main-content header {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+    }
+
+    footer .footer-left, .footer-right {
+        width: 200px;
+    }
+
+    .flex {
+        flex-wrap: nowrap;
+    }
+
+    .footer-left #image {
+        padding: 0 11px;
+        
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+    }
+
+    .logo-mobile .logo-profile {
+        margin-top: 12px;
+    }
+
+    .logo-mobile .download {
+        width: 15px;
+
+     }
+
+}    
 
 
 

@@ -14,26 +14,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <div class="container">
+    <!-- Wrapper -->
+    <div class="wrapper">
         <main>
             <!-- Main-nav -->
             <section class="main-nav flex-column">
                 <section class="nav-top">
                     <section class="logo">
                         <img src="img/logo.svg" alt="logo" id="logo">
-                    </section>
+                    </section> 
+                        
                     <section class="nav-list">
                         <ul class="menu-list">
-                            <li><img src="img/home.svg" alt="home" class="logo-text"><a href="#" class="col-white">Home</a></li>
+                            <li><img src="img/home.svg" alt="home" class="logo-text"><a href="#" class="col-white active-plus">Home</a></li>
                             <li><img src="img/search.svg" alt="search" class="logo-text"><a href="#">Cerca</a></li>
                             <li><img src="img/libreria.svg" alt="libreria" class="logo-text"><a href="#">La tua libreria</a></li>
                         </ul>
@@ -55,11 +54,25 @@
 
                 <section class="nav-bottom">
                     <ul class="menu-list">
-                        <li><img src="img/download.svg" alt="download" id="download"><a href="#">Installa app</a></li>
+                        <li><img src="img/download.svg" alt="download" class="download"><a href="#">Installa app</a></li>
                         <li><hr></li>  
-                        <li><img src="img/profile.svg" alt="profile" id="logo-profile"><span class="col-white">John Doe</span></li>
+                        <li class="img-profile"><img src="img/profile.svg" alt="profile" class="logo-profile"><span class="col-white">John Doe</span></li>
                     </ul>
                 </section>
+            </section>
+            
+            <!-- Section logo-mobile -->
+            <section class="logo-mobile">
+                <ul class="mobile-top">
+                   <li><a href="#"><img src="img/favicon.ico" alt="logo-mob" class="logo-mob mb-10"></a></li>
+                   <li><a href="#"><img src="img/home.svg" alt="home" class="logo-text mb-10"></a></li> 
+                   <li><a href="#"><img src="img/search.svg" alt="search" class="logo-text mb-10"></a></li>
+                   <li><a href="#"><img src="img/libreria.svg" alt="libreria" class="logo-text"></a></li>
+                </ul>
+                <ul class="mobile-bottom">
+                    <li><a href="#"><img src="img/download.svg" alt="download" class="download"></a></li>
+                    <li><a href="#"><img src="img/profile.svg" alt="profile" class="logo-profile"></a></li>
+                </ul>
             </section>
             
             <!-- Main-content -->
@@ -68,8 +81,8 @@
                 <header>
                     <button class="col-white">EFFETTUA L'UPGRADE</button>
                 </header>
-                <section class="content">
-                    <ul class="flex">
+                <nav class="content">
+                    <ul class="flex wrap">
                         <li><a href="#" class="active">IN EVIDENZA</a></li>
                         <li><a href="#">PODCAST</a></li>
                         <li><a href="#">CLASSIFICHE</a></li>
@@ -77,12 +90,13 @@
                         <li><a href="#">NUOVE USCITE</a></li>
                         <li><a href="#">SCOPRI</a></li>
                     </ul>
-                </section>
+                </nav>
                 <h1 class="col-white mt-35 mb-30">Recently played</h1>
-                <section class="cover-menu flex-section mt-20">
-                    <div class="flex-col">
+                <section class="flex-section mt-20">
+                    <div class="flex-col cover-menu">
                         <div class="cover-container">
                             <img src="img/metal_lifting.jpg" alt="metal" id="metal">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
                         </div>
                         <div class="cover-text">
                             <h3 class="col-white mt-10">Heavy Metal</h3>
@@ -90,22 +104,22 @@
                         </div>
 
                     </div>
-                    <div class="flex-col">
+                    <div class="flex-col cover-menu">
                         <div class="cover-container">
                             <img src="img/stranger.jpeg" alt="stranger" id="stranger">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>                      
                         </div>
 
                         <div class="cover-text">
                             <h3 class="col-white mt-10">Stranger Things, Vol.1 (a Netflix Original Series Soundtrack)</h3>
                             <p class="mt-10">Kyle Dixon & Michael Stein</p>
                         </div>
-
                     </div>
-
                         
-                    <div class="flex-col">
+                    <div class="flex-col cover-menu">
                         <div class="cover-container">
                             <img src="img/aquietplace.jpeg" alt="place" id="place">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
                         </div>
                         <div class="cover-text">
                             <h3 class="col-white mt-10">A quiet place</h3>
@@ -113,26 +127,85 @@
                         </div>
 
                     </div>
-                    <div class="flex-col">
+                    <div class="flex-col cover-menu">
                         <div class="cover-container">
                             <img src="img/split.jpeg" alt="split" id="split">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
                         </div>
                         <div class="cover-text">
                             <h3 class="col-white mt-10">Split</h3>
                             <p class="mt-10">Subtitle</p>
                         </div>
                     </div>
-                    <div class="flex-col">
+                    <div class="flex-col cover-menu">
                         <div class="cover-container">
                             <img src="img/cure.jpeg" alt="cure" id="cure">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
                         </div>
                         <div class="cover-text">
                             <h3 class="col-white mt-10">A cure for wellness</h3>
                             <p class="mt-10">Subtitle</p>
                         </div>
-
                     </div>
+                    <div class="flex-col cover-menu">
+                        <div class="cover-container">
+                            <img src="img/sinister.jpeg" alt="sinister" id="sinister">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
+                        </div>
+                        <div class="cover-text">
+                            <h3 class="col-white mt-10">Sinister</h3>
+                            <p class="mt-10">Subtitle</p>
+                        </div>
+                    </div>
+
                     
+                </section>
+
+                <h1 class="col-white mt-35 mb-10">Creato per John Doe</h1>
+                <p>Piu' ascolti, piu' accurati saranno i suggerimenti</p>
+                <section class="flex-section mt-20">
+                    <div class="flex-col cover-menu">
+                        <div class="cover-container">
+                            <img src="img/radar.jpeg" alt="radar" id="radar">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
+                        </div>
+                        <div class="cover-text">
+                            <h3 class="col-white mt-10">Release Radar</h3>
+                        </div>
+                    </div>
+                    <div class="flex-col cover-menu">
+                        <div class="cover-container">
+                            <img src="img/mixdaily.jpeg" alt="mixdaily" id="mixdaily">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
+                        </div>
+                        <div class="cover-text">
+                            <h3 class="col-white mt-10">Daily Mix 1</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <h1 class="col-white mt-35 mb-10">Artisti più popolari</h1>
+                <p>Piu' ascolti, piu' accurati saranno i suggerimenti</p>
+
+                <section class="flex-section mt-20">
+                    <div class="flex-col cover-menu">
+                        <div class="cover-container">
+                            <img src="img/youg.jpeg" alt="youg" id="youg">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
+                        </div>
+                        <div class="cover-text">
+                            <h3 class="col-white mt-10">Lana del Rey</h3>
+                        </div>
+                    </div>
+                    <div class="flex-col cover-menu">
+                        <div class="cover-container">
+                            <img src="img/einaudi.jpeg" alt="einaudi" id="einaudi">
+                            <i class="fa-regular fa-circle-play fa-4x"></i>
+                        </div>
+                        <div class="cover-text">
+                            <h3 class="col-white mt-10">Ludovico Einaudi</h3>
+                        </div>
+                    </div>
                 </section>
             </section>
 
@@ -148,8 +221,11 @@
                         <span class="col-white mt-20">Sinister</span>
                         <span class="name">Brano Nome</span>
                     </div>
-                    <span><i class="fa-regular fa-heart mr-15"></i></span>
-                    <span><i class="fa-regular fa-folder"></i></span>
+                    <div class="icons-footer">
+                        <i class="fa-regular fa-heart mr-15"></i>
+                        <i class="fa-regular fa-folder"></i>
+
+                    </div>
                 </div>
                 <div class="footer-center flex-col">
                     <div>
@@ -159,17 +235,31 @@
                         <span><i class="fa-solid fa-forward-step"></i></span>
                         <span><i class="fa-solid fa-arrow-rotate-right"></i></span>
                     </div>
-                    <div>
-                        <span class="number">0:25</span><span id="value"></span><span id="progress"></span><span
-                            class="number">4:35</span>
-                    </div>
+
+                    <div class="controls">
+                        <span>0:25</span>
+                        <div class="progress-bar-center">
+                            <div class="value">
+                                <div class="marker"></div>
+                            </div>
+                        </div>
+                        <span>4:35</span>
+                    </div> 
+                    
                 </div>
 
                 <div class="footer-right">
                     <span><i class="fa-solid fa-bars"></i></span>
                     <span><i class="fa-solid fa-tv"></i></span>
                     <span><i class="fa-solid fa-volume-high"></i></span>
-                    <span id="value-small"></span><span id="progress-small"></span>
+                    <div class="controls-right">
+                        <div class="progress-bar">
+                            <div class="value">
+                                <div class="marker"></div>
+                            </div>
+                        </div>
+                    </div> 
+                    
                 </div>
             </div>
         </footer>
